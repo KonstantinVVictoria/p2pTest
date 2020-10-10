@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Peer from "peerjs";
 let peer = new Peer();
-let isLiveG = null;
 const initSignal = () => {
   console.log("Awaiting Hash", window.location.hash);
   peer.on("open", function (id) {
