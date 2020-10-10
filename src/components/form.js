@@ -46,7 +46,7 @@ let recieveSignal = () => {
     getUserMedia(
       { video: false, audio: true },
       function (stream) {
-        call.answer(stream); // Answer the call with an A/V stream.
+        call.answer(stream);
         call.on("stream", function (remoteStream) {
           let audioPlayer = document.getElementById("audio-player");
           audioPlayer.srcObject = remoteStream;
@@ -54,7 +54,6 @@ let recieveSignal = () => {
           console.log(remoteStream);
           audioPlayer.load();
           audioPlayer.play();
-          // Show stream in some video/canvas element.
         });
       },
       function (err) {
@@ -63,7 +62,6 @@ let recieveSignal = () => {
     );
   });
 };
-//initSignal();
 recieveSignal();
 
 const Form = (props) => {
