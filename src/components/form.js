@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Peer from "peerjs";
 let peer = new Peer();
-let isLiveG = null;
 const initSignal = () => {
   console.log("Awaiting Hash", window.location.hash);
   peer.on("open", function (id) {
@@ -65,10 +64,6 @@ let recieveSignal = () => {
 recieveSignal();
 
 const Form = (props) => {
-  const [isLive, setIsLive] = useState([("false", null)]);
-  isLiveG = setIsLive;
-  console.log(isLive[1]);
-
   return (
     <div
       style={{
